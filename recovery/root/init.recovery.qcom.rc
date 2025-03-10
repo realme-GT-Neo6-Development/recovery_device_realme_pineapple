@@ -41,7 +41,6 @@ on fs
     mount ext4 /dev/block/by-name/persist /mnt/vendor/persist rw
     mount ext4 /dev/block/by-name/persist /persist rw
     mkdir /persist/OFRPFox
-    mount none /tmp/persist /mnt/vendor/persist bind rec
 
 service keymaster-4-0-qti /system/bin/android.hardware.keymaster@4.0-service-qti
     user root
@@ -72,6 +71,9 @@ on boot
     setprop sys.usb.config adb
     start overrideprops
 
+on post-fs-data
+    mkdir /data/vendor/secure_element 0777 system system
+
 on property:twrp.modules.loaded=true
     # Mount firmware
     mkdir /firmware
@@ -80,7 +82,6 @@ on property:twrp.modules.loaded=true
     wait /sys/kernel/boot_adsp/boot
     write /sys/kernel/boot_adsp/boot 1
     wait /sys/class/power_supply/battery
-    start vendor.qseecomd
     start health-hal-2-1
     umount /firmware
 
@@ -90,6 +91,7 @@ on property:ro.crypto.state=encrypted && property:ro.boot.dynamic_partitions=tru
 on property:crypto.ready=1 && property:hwservicemanager.ready=true
     start vendor.qseecomd
     start vendor.keymint-qti
+    start vendor.secure_element
     start vendor.weaver_nxp
 
 on property:sys.listeners.registered=true && property:keymaster_ver=4.0
@@ -111,4 +113,5 @@ on property:twrp.all.users.decrypted=true
     stop vendor.qseecomd
     stop vendor.keymint-qti
     stop keymaster-4-0-qti
+    stop vendor.secure_element
     stop vendor.weaver_nxp
