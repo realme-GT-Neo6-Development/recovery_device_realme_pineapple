@@ -1,0 +1,13 @@
+1=enable
+0xe4=cpu_mask
+0=fpc_ntc_support
+0=temp_comp_with_fpc_ntc
+0=temp_comp_without_fpc_ntc
+50=allow_temp_high_thr
+-250=allow_temp_low_thr
+21600=time_out
+300=over_current_limit
+140=temp_done
+12=start_time_before_compensation
+1=bms_affinity_support
+

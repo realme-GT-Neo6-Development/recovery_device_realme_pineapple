@@ -16,3 +16,17 @@ vendor.gatekeeper.is_security_level_spu=0
 # USB Config
 vendor.usb.use_ffs_mtp=1
 persist.sys.oem.otg_support=true
+
+# Vibrator
+ro.oplus.haptic.lra_value_set=true
+ro.oplus.haptic.lra_range_min=120
+ro.oplus.haptic.lra_range_gap1=124
+ro.oplus.haptic.lra_range_gap2=128
+ro.oplus.haptic.lra_range_gap3=131
+ro.oplus.haptic.lra_range_gap4=136
+ro.oplus.haptic.lra_range_max=140
+ro.oplus.haptic.lra_level_low=122
+ro.oplus.haptic.lra_level_middle=126
+ro.oplus.haptic.lra_level_middle1=130
+ro.oplus.haptic.lra_level_middle2=134
+ro.oplus.haptic.lra_level_high=138

@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <version>2024052100</version>
+    <device id = "0">
+        <panel id = "0" name="tp/23609/FW_S3910_BOE_HBP.img">
+            <modules id="PreventionConfig" enable="true" hint="">
+                <param name="panel-coords" type="u32" hint="max_x max_y">
+                    <value>12640,27800</value>
+                </param>
+                <param name="tx-rx-num" type="u32" hint="" >
+                    <value>17,38</value>
+                </param>
+                <param name="grip_disable_level" type="u32" hint="" >
+                    <value>6</value>
+                </param>
+                <param name="prevention,updelay_time_ms" type="u32" hint="" >
+                    <value>20</value>
+                </param>
+                <param name="prevention,large_corner_range" type="u32" hint="" >
+                    <value>1400,3400</value>
+                </param>
+                <param name="prevention,large_corner_judge_condition" type="u32" hint="" >
+                    <value>500,400,1170,7,7</value>
+                </param>
+                <param name="prevention,trx_reject_condition" type="u32" hint="" >
+                    <value>9,8,8</value>
+                </param>
+                <param name="prevention,large_judge_time_ms" type="u32" hint="" >
+                    <value>500,50,30</value>
+                </param>
+                <param name="prevention,large_exit_condition" type="u32" hint="" >
+                    <value>8,8,2</value>
+                </param>
+                <param name="prevention,single_channel_width" type="u32" hint="" >
+                    <value>375,375</value>
+                </param>
+                <param name="prevention,normal_tap_condition" type="u32" hint="" >
+                    <value>10,350</value>
+                </param>
+                <param name="prevention,long_edge_condition" type="u32" hint="" >
+                    <value>179,90,120,80</value>
+                </param>
+                <param name="prevention,long_fingerhold_condition" type="u32" hint="" >
+                    <value>70,6,4,4</value>
+                </param>
+                <param name="prevention,short_edge_condition" type="u32" hint="" >
+                    <value>179,90,120,80</value>
+                </param>
+                <param name="prevention,top_corner_config" type="u32" hint="" >
+                    <value>585,1738,562</value>
+                </param>
+                <param name="prevention,edge_swipe_config" type="u32" hint="" >
+                    <value>352,1390</value>
+                </param>
+                <param name="prevention,trx_strict_reject_condition" type="u32" hint="" >
+                    <value>8,7,7</value>
+                </param>
+                <param name="prevention,long_strict_edge_condition" type="u32" hint="" >
+                    <value>160,60</value>
+                </param>
+                <param name="prevention,short_strict_edge_condition" type="u32" hint="" >
+                    <value>160,60</value>
+                </param>
+                <param name="prevention,large_strict_exit_condition" type="u32" hint="" >
+                    <value>6,6</value>
+                </param>
+                <param name="prevention,corner_move_rejected" type="u32" hint="" >
+                    <value>0</value>
+                </param>
+                <param name="prevention,corner_eliminate_point_support" type="u32" hint="" >
+                    <value>1</value>
+                </param>
+                <param name="prevention,curved_screen_V4" type="u32" hint="" >
+                    <value>1</value>
+                </param>
+                <param name="prevention,long_fingerhold_condition2" type="u32" hint="" >
+                    <value>714,2000,0,1</value>
+                </param>
+                <param name="prevention,top_corner_config2" type="u32" hint="" >
+                    <value>3,80,375,702,0</value>
+                </param>
+                <param name="prevention,hor_long_top_corner_config" type="u32" hint="" >
+                    <value>702,2317</value>
+                </param>
+                <param name="prevention,top_middle_config" type="u32" hint="" >
+                    <value>12640,1158,1158,0</value>
+                </param>
+                <param name="prevention,corner_eliminate_point_type" type="u32" hint="" >
+                    <value>0,1404,2780,1</value>
+                </param>
+                <param name="prevention,long_eliminate_point_type" type="u32" hint="" >
+                    <value>2,12640,9270,352,27800,300,1</value>
+                </param>
+                <param name="prevention,finger_hold_differ_size" type="u32" hint="" >
+                    <value>1,0,352,300</value>
+                </param>
+                <param name="prevention,finger_hold_max_rx_exit_distance" type="u32" hint="" >
+                    <value>5,352,2317</value>
+                </param>
+                <param name="prevention,max_rx_exit_distance" type="u32" hint="" >
+                    <value>1,5,120,352,2317</value>
+                </param>
+                <param name="prevention,dynamic_finger_hold_exit_distance" type="u32" hint="" >
+                    <value>1,352,2317,410</value>
+                </param>
+                <param name="prevention,edge_sliding_matched_support" type="u32" hint="" >
+                    <value>1,200,3,1</value>
+                </param>
+                <param name="prevention,reclining_mode_support" type="u32" hint="" >
+                    <value>1</value>
+                </param>
+                <param name="prevention,long_eliminate_point_type_recli" type="u32" hint="" >
+                    <value>2,12640,9270,352,27800,500,1</value>
+                </param>
+                <param name="prevention,finger_hold_differ_size_recli" type="u32" hint="" >
+                    <value>1,0,352,300</value>
+                </param>
+                <param name="prevention,finger_hold_max_rx_exit_distance_recli" type="u32" hint="" >
+                    <value>5,352,2317</value>
+                </param>
+                <param name="prevention,max_rx_exit_distance_recli" type="u32" hint="" >
+                    <value>1,5,120,352,2317</value>
+                </param>
+                <param name="prevention,dynamic_finger_hold_exit_distance_recli" type="u32" hint="" >
+                    <value>1,352,2317,410</value>
+                </param>
+                <param name="prevention,edge_sliding_matched_support_recli" type="u32" hint="" >
+                    <value>1,150,3,0</value>
+                </param>
+                <param name="prevention,long_edge_condition_recli" type="u32" hint="" >
+                    <value>179,90,120,80</value>
+                </param>
+            </modules>
+            <modules id="TouchConfig" enable="true" hint="">
+                <param name="hbp_algo_diff_support" type="u32" hint="">
+                    <value>0</value>
+                </param>
+                <param name="syna_algo_diff_support" type="u32" hint="">
+                    <value>1</value>
+                </param>
+                <param name="palm_mode_support" type="u32" hint="">
+                    <value>1</value>
+                </param>
+                <param name="touchpanel,smooth-level" type="u32" hint="">
+                    <value>0,1,2,4,7,9</value>
+                </param>
+                <param name="touchpanel,sensitive-level" type="u32" hint="">
+                    <value>0,70,55,40,25,10</value>
+                </param>
+                <param name="touch_monitor_support" type="u32" hint="">
+                    <value>1</value>
+                </param>
+                <param name="touch_monitor_wakeup_times" type="u32" hint="">
+                    <value>10</value>
+                </param>
+                <param name="touch_monitor_timeout_ms" type="u32" hint="">
+                    <value>2000</value>
+                </param>
+                <param name="touch_monitor_timeout_max_count" type="u32" hint="">
+                    <value>1</value>
+                </param>
+                <param name="exception_upload_support" type="u32" hint="">
+                    <value>1</value>
+                </param>
+                <param name="game_hot_zone_support" type="u32" hint="">
+                    <value>0</value>
+                </param>
+                <param name="peak_thd_config_support" type="u32" hint="">
+                    <value>0</value>
+                </param>
+                <param name="senior_low_temp_mode_support" type="u32" hint="">
+                    <value>0</value>
+                </param>
+                <param name="extreme_game_report_rate" type="u32" hint="">
+                    <value>360</value>
+                </param>
+                <param name="edge_pull_out_support" type="u32" hint="">
+                    <value>1</value>
+                </param>
+                <param name="syna_game_hot_zone_support" type="u32" hint="">
+                    <value>1</value>
+                </param>
+                <param name="adaptive_finger_threshold_support" type="u32" hint="">
+                    <value>1</value>
+                </param>
+                <param name="smart_tp_support" type="u32" hint="">
+                    <value>0</value>
+                </param>
+                <param name="waterproof_support" type="u32" hint="">
+                    <value>1</value>
+                </param>
+            </modules>
+        </panel>
+        <panel id = "1" name="tp/23609/FW_S3910_TIANMA_HBP.img">
+            <modules id="PreventionConfig" enable="true" hint="">
+                <param name="panel-coords" type="u32" hint="max_x max_y">
+                    <value>12640,27800</value>
+                </param>
+                <param name="tx-rx-num" type="u32" hint="" >
+                    <value>18,39</value>
+                </param>
+                <param name="grip_disable_level" type="u32" hint="" >
+                    <value>6</value>
+                </param>
+                <param name="prevention,updelay_time_ms" type="u32" hint="" >
+                    <value>20</value>
+                </param>
+                <param name="prevention,large_corner_range" type="u32" hint="" >
+                    <value>1400,3400</value>
+                </param>
+                <param name="prevention,large_corner_judge_condition" type="u32" hint="" >
+                    <value>500,400,1170,7,7</value>
+                </param>
+                <param name="prevention,trx_reject_condition" type="u32" hint="" >
+                    <value>9,8,8</value>
+                </param>
+                <param name="prevention,large_judge_time_ms" type="u32" hint="" >
+                    <value>500,50,30</value>
+                </param>
+                <param name="prevention,large_exit_condition" type="u32" hint="" >
+                    <value>8,8,2</value>
+                </param>
+                <param name="prevention,single_channel_width" type="u32" hint="" >
+                    <value>375,375</value>
+                </param>
+                <param name="prevention,normal_tap_condition" type="u32" hint="" >
+                    <value>10,350</value>
+                </param>
+                <param name="prevention,long_edge_condition" type="u32" hint="" >
+                    <value>179,90,120,80</value>
+                </param>
+                <param name="prevention,long_fingerhold_condition" type="u32" hint="" >
+                    <value>70,6,4,4</value>
+                </param>
+                <param name="prevention,short_edge_condition" type="u32" hint="" >
+                    <value>179,90,120,80</value>
+                </param>
+                <param name="prevention,top_corner_config" type="u32" hint="" >
+                    <value>585,1738,562</value>
+                </param>
+                <param name="prevention,edge_swipe_config" type="u32" hint="" >
+                    <value>352,1390</value>
+                </param>
+                <param name="prevention,trx_strict_reject_condition" type="u32" hint="" >
+                    <value>8,7,7</value>
+                </param>
+                <param name="prevention,long_strict_edge_condition" type="u32" hint="" >
+                    <value>160,60</value>
+                </param>
+                <param name="prevention,short_strict_edge_condition" type="u32" hint="" >
+                    <value>160,60</value>
+                </param>
+                <param name="prevention,large_strict_exit_condition" type="u32" hint="" >
+                    <value>6,6</value>
+                </param>
+                <param name="prevention,corner_move_rejected" type="u32" hint="" >
+                    <value>0</value>
+                </param>
+                <param name="prevention,corner_eliminate_point_support" type="u32" hint="" >
+                    <value>1</value>
+                </param>
+                <param name="prevention,curved_screen_V4" type="u32" hint="" >
+                    <value>1</value>
+                </param>
+                <param name="prevention,long_fingerhold_condition2" type="u32" hint="" >
+                    <value>714,2000,0,1</value>
+                </param>
+                <param name="prevention,top_corner_config2" type="u32" hint="" >
+                    <value>3,80,375,702,0</value>
+                </param>
+                <param name="prevention,hor_long_top_corner_config" type="u32" hint="" >
+                    <value>702,2317</value>
+                </param>
+                <param name="prevention,top_middle_config" type="u32" hint="" >
+                    <value>12640,1158,1158,0</value>
+                </param>
+                <param name="prevention,corner_eliminate_point_type" type="u32" hint="" >
+                    <value>0,1404,2780,1</value>
+                </param>
+                <param name="prevention,long_eliminate_point_type" type="u32" hint="" >
+                    <value>2,12640,9270,352,27800,300,1</value>
+                </param>
+                <param name="prevention,finger_hold_differ_size" type="u32" hint="" >
+                    <value>1,0,352,300</value>
+                </param>
+                <param name="prevention,finger_hold_max_rx_exit_distance" type="u32" hint="" >
+                    <value>5,352,2317</value>
+                </param>
+                <param name="prevention,max_rx_exit_distance" type="u32" hint="" >
+                    <value>1,5,120,352,2317</value>
+                </param>
+                <param name="prevention,dynamic_finger_hold_exit_distance" type="u32" hint="" >
+                    <value>1,352,2317,410</value>
+                </param>
+                <param name="prevention,edge_sliding_matched_support" type="u32" hint="" >
+                    <value>1,200,3,1</value>
+                </param>
+                <param name="prevention,reclining_mode_support" type="u32" hint="" >
+                    <value>1</value>
+                </param>
+                <param name="prevention,long_eliminate_point_type_recli" type="u32" hint="" >
+                    <value>2,12640,9270,352,27800,500,1</value>
+                </param>
+                <param name="prevention,finger_hold_differ_size_recli" type="u32" hint="" >
+                    <value>1,0,352,300</value>
+                </param>
+                <param name="prevention,finger_hold_max_rx_exit_distance_recli" type="u32" hint="" >
+                    <value>5,352,2317</value>
+                </param>
+                <param name="prevention,max_rx_exit_distance_recli" type="u32" hint="" >
+                    <value>1,5,120,352,2317</value>
+                </param>
+                <param name="prevention,dynamic_finger_hold_exit_distance_recli" type="u32" hint="" >
+                    <value>1,352,2317,410</value>
+                </param>
+                <param name="prevention,edge_sliding_matched_support_recli" type="u32" hint="" >
+                    <value>1,150,3,0</value>
+                </param>
+                <param name="prevention,long_edge_condition_recli" type="u32" hint="" >
+                    <value>179,90,120,80</value>
+                </param>
+            </modules>
+            <modules id="TouchConfig" enable="true" hint="">
+                <param name="hbp_algo_diff_support" type="u32" hint="">
+                    <value>0</value>
+                </param>
+                <param name="syna_algo_diff_support" type="u32" hint="">
+                    <value>1</value>
+                </param>
+                <param name="palm_mode_support" type="u32" hint="">
+                    <value>1</value>
+                </param>
+                <param name="touchpanel,smooth-level" type="u32" hint="">
+                    <value>0,1,2,4,7,9</value>
+                </param>
+                <param name="touchpanel,sensitive-level" type="u32" hint="">
+                    <value>0,70,55,40,25,10</value>
+                </param>
+                <param name="touch_monitor_support" type="u32" hint="">
+                    <value>1</value>
+                </param>
+                <param name="touch_monitor_wakeup_times" type="u32" hint="">
+                    <value>10</value>
+                </param>
+                <param name="touch_monitor_timeout_ms" type="u32" hint="">
+                    <value>2000</value>
+                </param>
+                <param name="touch_monitor_timeout_max_count" type="u32" hint="">
+                    <value>1</value>
+                </param>
+                <param name="exception_upload_support" type="u32" hint="">
+                    <value>1</value>
+                </param>
+                <param name="game_hot_zone_support" type="u32" hint="">
+                    <value>0</value>
+                </param>
+                <param name="peak_thd_config_support" type="u32" hint="">
+                    <value>0</value>
+                </param>
+                <param name="senior_low_temp_mode_support" type="u32" hint="">
+                    <value>0</value>
+                </param>
+                <param name="extreme_game_report_rate" type="u32" hint="">
+                    <value>360</value>
+                </param>
+                <param name="edge_pull_out_support" type="u32" hint="">
+                    <value>1</value>
+                </param>
+                <param name="syna_game_hot_zone_support" type="u32" hint="">
+                    <value>1</value>
+                </param>
+                <param name="adaptive_finger_threshold_support" type="u32" hint="">
+                    <value>1</value>
+                </param>
+                <param name="smart_tp_support" type="u32" hint="">
+                    <value>0</value>
+                </param>
+                <param name="waterproof_support" type="u32" hint="">
+                    <value>1</value>
+                </param>
+            </modules>
+        </panel>
+    </device>
+</root>
