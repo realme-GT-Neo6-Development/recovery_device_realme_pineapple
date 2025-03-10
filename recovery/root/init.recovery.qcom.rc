@@ -34,12 +34,31 @@ on fs
     chmod 0664 /dev/ion
     chown system system /dev/ion
     mkdir /mnt/vendor 0775 shell system
-    mkdir /mnt/vendor/persist 0775 shell system
-    mkdir /tmp/persist 0775 shell system
+    mkdir /mnt/vendor/persist 0771 system system
+    chown system system /mnt/vendor/persist
+    chmod 0771 /mnt/vendor/persist
+    restorecon /mnt/vendor/persist
+    mount ext4 /dev/block/by-name/persist /mnt/vendor/persist rw
+    mount ext4 /dev/block/by-name/persist /persist rw
+    mkdir /persist/OFRPFox
     mount none /tmp/persist /mnt/vendor/persist bind rec
-    install_keyring
+
+service keymaster-4-0-qti /system/bin/android.hardware.keymaster@4.0-service-qti
+    user root
+    group root
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
     
 service overrideprops /system/bin/overrideprops.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
+service prepdecrypt /system/bin/prepdecrypt.sh
     user root
     group root
     disabled
@@ -62,13 +81,34 @@ on property:twrp.modules.loaded=true
     write /sys/kernel/boot_adsp/boot 1
     wait /sys/class/power_supply/battery
     start vendor.qseecomd
-    start touch_report
     start health-hal-2-1
-    start vibratorfeature-hal-service
     umount /firmware
 
-on property:vendor.sys.listeners.registered=true
-    start vendor.secure_element
-    start vendor.gatekeeper_default
+on property:ro.crypto.state=encrypted && property:ro.boot.dynamic_partitions=true
+    start prepdecrypt
+
+on property:crypto.ready=1 && property:hwservicemanager.ready=true
+    start vendor.qseecomd
     start vendor.keymint-qti
     start vendor.weaver_nxp
+
+on property:sys.listeners.registered=true && property:keymaster_ver=4.0
+    start keymaster-4-0-qti
+
+on property:ro.crypto.type=block && property:ro.crypto.fs_crypto_blkdev=*
+    setprop crypto.ready 0
+    stop vendor.qseecomd
+    stop keymaster-4-0-qti
+
+on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
+    install_keyring
+
+on property:vendor.sys.listeners.registered=true
+    start vendor.gatekeeper_default
+
+on property:twrp.all.users.decrypted=true
+    setprop crypto.ready 0
+    stop vendor.qseecomd
+    stop vendor.keymint-qti
+    stop keymaster-4-0-qti
+    stop vendor.weaver_nxp
