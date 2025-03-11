@@ -23,5 +23,8 @@
 	export FOX_USE_BASH_SHELL=1
 	export FOX_USE_NANO_EDITOR=1
 
+	#Other
+	export FOX_ENABLE_APP_MANAGER=1
+
 	#OTA
     export FOX_VIRTUAL_AB_DEVICE=1
