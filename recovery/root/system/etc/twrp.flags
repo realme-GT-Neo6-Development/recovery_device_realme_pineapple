@@ -37,15 +37,8 @@
 /efsg           emmc    /dev/block/bootdevice/by-name/fsg                                   flags=backup;subpartitionof=/efs1
 
 # Critical partitions
-/tz             emmc    /dev/block/bootdevice/by-name/tz                                    flags=slotselect;backup;display="Critical"
-/static_nv_bk   emmc    /dev/block/bootdevice/by-name/oplusstanvbk                          flags=slotselect;backup;subpartitionof=/tz
-/oplusdycnvbk   emmc    /dev/block/bootdevice/by-name/oplusdycnvbk                          flags=slotselect;backup;subpartitionof=/tz
-/dsp            emmc    /dev/block/bootdevice/by-name/dsp                                   flags=slotselect;backup;subpartitionof=/tz
-/devcfg         emmc    /dev/block/bootdevice/by-name/devcfg                                flags=slotselect;backup;subpartitionof=/tz
-/keymaster      emmc    /dev/block/bootdevice/by-name/keymaster                             flags=slotselect;backup;subpartitionof=/tz
-/devinfo        emmc    /dev/block/bootdevice/by-name/devinfo                               flags=backup;subpartitionof=/tz
-/abl            emmc    /dev/block/bootdevice/by-name/abl                                   flags=slotselect;backup;subpartitionof=/tz
-/xbl            emmc    /dev/block/bootdevice/by-name/xbl                                   flags=slotselect;backup;subpartitionof=/tz
+/static_nv_bk   emmc    /dev/block/bootdevice/by-name/oplusstanvbk                          flags=slotselect;backup;display="oplusstanvbk"
+/oplusdycnvbk   emmc    /dev/block/bootdevice/by-name/oplusdycnvbk                          flags=slotselect;backup;display="oplusdycnvbk"
 
 
 # Removable storage
