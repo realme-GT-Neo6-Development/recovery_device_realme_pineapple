@@ -1,4 +1,4 @@
-# Copyright (c) 2017-2023, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2025, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -41,23 +41,9 @@ on fs
     mount ext4 /dev/block/by-name/persist /mnt/vendor/persist rw
     mount ext4 /dev/block/by-name/persist /persist rw
     mkdir /persist/OFRPFox
-
-service keymaster-4-0-qti /system/bin/android.hardware.keymaster@4.0-service-qti
-    user root
-    group root
-    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0
+    install_keyring
     
 service overrideprops /system/bin/overrideprops.sh
-    user root
-    group root
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0
-
-service prepdecrypt /system/bin/prepdecrypt.sh
     user root
     group root
     disabled
@@ -86,33 +72,14 @@ on property:twrp.modules.loaded=true
     start realme.vibrator
     umount /firmware
 
-on property:ro.crypto.state=encrypted && property:ro.boot.dynamic_partitions=true
-    start prepdecrypt
 
-on property:crypto.ready=1 && property:hwservicemanager.ready=true
+on property:hwservicemanager.ready=true
     start vendor.qseecomd
     start vendor.keymint-qti
-    start vendor.secure_element
-    start vendor.weaver_nxp
+    setprop sys.boot_completed 1
 
-on property:sys.listeners.registered=true && property:keymaster_ver=4.0
-    start keymaster-4-0-qti
-
-on property:ro.crypto.type=block && property:ro.crypto.fs_crypto_blkdev=*
-    setprop crypto.ready 0
-    stop vendor.qseecomd
-    stop keymaster-4-0-qti
-
-on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
-    install_keyring
-
-on property:vendor.sys.listeners.registered=true
+on property:vendor.sys.listeners.registered=true && property:twrp.action_complete=0
     start vendor.gatekeeper_default
-
-on property:twrp.all.users.decrypted=true
-    setprop crypto.ready 0
-    stop vendor.qseecomd
-    stop vendor.keymint-qti
-    stop keymaster-4-0-qti
-    stop vendor.secure_element
-    stop vendor.weaver_nxp
+    start vendor.weaver_nxp
+    start vendor.secure_element
+    start vendor.keymint-strongbox
