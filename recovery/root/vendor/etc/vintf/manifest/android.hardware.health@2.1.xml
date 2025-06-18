@@ -1,4 +1,4 @@
-<manifest version="1.0" type="device">
+<manifest version="7.0" type="device">
     <hal format="hidl">
         <name>android.hardware.health</name>
         <transport>hwbinder</transport>
