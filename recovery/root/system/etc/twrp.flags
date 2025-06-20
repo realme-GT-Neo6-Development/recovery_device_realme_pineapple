@@ -43,3 +43,8 @@
 
 # Removable storage
 /usb_otg        auto    /dev/block/sdg1 /dev/block/sdh1                                     flags=storage;wipeingui;removable;fsflags="utf8"
+
+# Modified partitions
+/win           ntfs    /dev/block/bootdevice/by-name/win                         flags=display="Windows";storage
+/esp           vfat    /dev/block/bootdevice/by-name/esp                         flags=fsflags=utf8;display="ESP"
+/linux         ext4    /dev/block/bootdevice/by-name/linux                       flags=display="Linux";storage
