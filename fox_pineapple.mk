@@ -38,4 +38,4 @@ OF_DISABLE_OTA_MENU := 1
 OF_DYNAMIC_FULL_SIZE := 9663676416
 
 # Maintainer specific settings
-OF_MAINTAINER := MisterZtr
+OF_MAINTAINER := InternalHellhound

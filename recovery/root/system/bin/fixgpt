@@ -1,0 +1,21 @@
+#!/sbin/bash
+. common
+run_gdisk() {
+    local DEVICE=$1
+    /system/bin/gdisk "$DEVICE" <<EOF
+x
+j
+
+k
+
+w
+y
+EOF
+}
+
+for i in a b c d e f; do
+    DEVICE="/dev/block/sd$i"
+        run_gdisk "$DEVICE"
+	done
+
+echo "GPT has been fixed"

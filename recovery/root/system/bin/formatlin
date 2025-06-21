@@ -1,0 +1,14 @@
+#!/sbin/bash
+. common
+
+linux=/dev/block/by-name/linux
+
+[ -e $linux ] || {
+	echo "Linux partition wasn't found. Please check your partition table."
+	exit 1
+
+}
+
+formatlinux
+
+echo "done!"

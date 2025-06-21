@@ -1,0 +1,23 @@
+#!/sbin/bash
+
+esp=$(readlink -f /dev/block/by-name/esp)
+win=$(readlink -f /dev/block/by-name/win)
+linux=$(readlink -f /dev/block/by-name/linux)
+userdata=$(readlink -f /dev/block/by-name/userdata)
+
+formatwinesp() {
+    umount /win
+    mkfs.fat -F32 -s1 $esp -n ESP-ARM
+    mkfs.ntfs -f $win -L Win-ARM
+}
+
+formatlinux() {
+    umount /linux
+    mkfs.ext4 $linux
+}
+
+formatdata() {
+    make_f2fs -f -g android $userdata
+    mke2fs -F -t ext4 /dev/block/by-name/metadata
+    mke2fs -F -t ext4 /dev/block/by-name/cache
+}

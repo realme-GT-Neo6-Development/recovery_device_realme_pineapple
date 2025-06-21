@@ -1,0 +1,15 @@
+#!/sbin/bash
+. common
+
+win=/dev/block/by-name/win
+esp=/dev/block/by-name/esp
+
+[ -e $win -a -e $esp ] || {
+	echo "Neither Windows and ESP partitions were found. Please check your partition table."
+	exit 1
+
+}
+
+formatwinesp
+
+echo "done!"
