@@ -43,6 +43,13 @@ on fs
     mkdir /persist/OFRPFox
     install_keyring
     
+service variant-script /system/bin/variant-script.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
 service overrideprops /system/bin/overrideprops.sh
     user root
     group root
@@ -55,6 +62,7 @@ on init
 
 on boot
     setprop sys.usb.config adb
+    start variant-script
     start overrideprops
 
 on post-fs-data
