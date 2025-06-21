@@ -32,9 +32,10 @@ Works:
 
 ## Modifications themselves
 - [X] Utility: parted (repartition your device's partitions. Included in recovery)
-- [ ] Utility: gdisk / sfdisk (GPT fix for Windows starting with 24H2. Will be included in recovery with additional script for automatic fix later in releases)
-- [X] Auto-mount of ESP, Windows and Linux partitions in recovery</br>
-More mods will be added later...
+- [X] Utility: gdisk (GPT fix for Windows starting with 24H2. Will be included in recovery with additional script for automatic fix later in releases)
+- [X] Auto-mount of ESP, Windows and Linux partitions in recovery
+- [ ] Quick format of Linux / Windows partition from recovery</br>
+**More features will be added later...**
 
 # Building
 ```bash
