@@ -1,6 +1,6 @@
 #  OrangeFox recovery tree for relame devices with qualcomm processor codenamed pineapple
 
-Code name pineapple includes next platforms: sm8650, sm8635, and sm7675. This recovery can be launched on Realme GT Neo 6(RMX3852(bale)), Realme GT6 Global/China(RMX3851/RMX3800), Realme GT 6T/Neo 6 SE(RMX3850/RMX3853) and Realme GT5 PRO(RMX3888)
+Code name pineapple includes next platforms: sm8650, sm8635, and sm7675. This recovery can be launched on Realme GT Neo 6(RMX3852), Realme GT6 Global/China(RMX3851/RMX3800), Realme GT 6T/Neo 6 SE(RMX3853/RMX3850) and Realme GT5 PRO(RMX3888)
 
 This recovery can also be run on other oplus devices with the appropriate processor
 
