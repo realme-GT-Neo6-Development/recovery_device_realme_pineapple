@@ -1,8 +1,17 @@
 #  OrangeFox recovery tree for relame devices with qualcomm processor codenamed pineapple
 
-Code name pineapple includes next platforms: sm8650, sm8635, and sm7675. This recovery can be launched on Realme GT Neo 6(RMX3852), Realme GT6 Global/China(RMX3851/RMX3800), Realme GT 6T/Neo 6 SE(RMX3853/RMX3850) and Realme GT5 PRO(RMX3888)
+Platforms, included under realme's codename "pineapple", are:
+- Qualcomm Snapdragon 8 Gen 3 (SM8650)
+- Qualcomm Snapdragon 8s Gen 3 (SM8635)
+- Qualcomm Snapdragon 7+ Gen 3 (SM7675)</br>
 
-This recovery can also be run on other oplus devices with the appropriate processor
+Devices, that can run and will run this recovery without any sudden and unforseen issues:
+- realme GT5 Pro (enzo / RMX3888 / RE5C37)
+- realme GT Neo6 (bale / RMX3852 / RE5C46L1)
+- realme GT6 Global (bale / RMX3851 / RE5CA6L1)
+- realme GT Neo 6SE (bale / RMX3850 / RE5C39L1)
+- realme GT6T (bale / RMX3853 / RE606FL1)
+- realme GT6 CN (divo / RMX3800 / RE5C4FL1)</br>
 
 ## Features
 
@@ -25,7 +34,7 @@ Works:
 # Building
 
 ```bash
-git clone https://github.com/MisterZtr/recovery_device_realme_pineapple.git device/realme/pineapple
+git clone https://github.com/realme-pineapple-devs/recovery_device_realme_pineapple.git device/realme/pineapple
 . build/envsetup.sh
 lunch twrp_pineapple-ap2a-eng
 make installclean
