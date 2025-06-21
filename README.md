@@ -1,13 +1,21 @@
-#  OrangeFox recovery tree for relame devices with qualcomm processor codenamed pineapple
+# Modified OrangeFox recovery tree for realme "pineapple" devices.
+Platforms, included under realme's codename "pineapple", are:
+- Qualcomm Snapdragon 8 Gen 3 (SM8650)
+- Qualcomm Snapdragon 8s Gen 3 (SM8635)
+- Qualcomm Snapdragon 7+ Gen 3 (SM7675)</br>
 
-Code name pineapple includes next platforms: sm8650, sm8635, and sm7675. This recovery can be launched on Realme GT Neo 6(RMX3852(bale)), Realme GT6 Global/China(RMX3851/RMX3800), Realme GT 6T/Neo 6 SE(RMX3850/RMX3853) and Realme GT5 PRO(RMX3888)
+Devices, that can run and will run this recovery without any sudden and unforseen issues:
+- realme GT5 Pro (enzo / RMX3888 / RE5C37)
+- realme GT Neo6 (bale / RMX3852 / RE5C46L1)
+- realme GT6 Global (bale / RMX3851 / RE5CA6L1)
+- realme GT Neo 6SE (bale / RMX3850 / RE5C39L1)
+- realme GT6T (bale / RMX3853 / RE606FL1)
+- realme GT6 CN (divo / RMX3800 / RE5C4FL1)</br>
 
-This recovery can also be run on other oplus devices with the appropriate processor
+Huge thanks to [MisterZtr](https://github.com/MisterZtr) for recovery base
 
 ## Features
-
 Works:
-
 - [X] ADB
 - [X] Display
 - [X] Fasbootd
@@ -20,21 +28,25 @@ Works:
 - [X] OTA/Payload
 - [ ] User data decryption on RUI(We can only decrypt “/data”)
 - [ ] Unable to successfully unmap super devices(If try to fix this, it causes an OrangeFox bug with hw control, which prevents recovery from loading until OFOX settings are cleared)
-- [ ] Сannot format DATA (this is prevented by the inability to unmap super devices + in any case, you cannot format DATA on RUI until user data is decrypted)
+- [ ] Сannot format data (this is prevented by the inability to unmap super devices + in any case, you cannot format DATA on RUI until user data is decrypted)
+
+## Modifications themselves
+- [X] Utility: parted (repartition your device's partitions. Included in recovery)
+- [ ] Utility: gdisk / sfdisk (GPT fix for Windows starting with 24H2. Will be included in recovery with additional script for automatic fix later in releases)
+- [X] Auto-mount of ESP, Windows and Linux partitions in recovery</br>
+More mods will be added later...
 
 # Building
-
 ```bash
-git clone https://github.com/MisterZtr/recovery_device_realme_pineapple.git device/realme/pineapple
+git clone https://github.com/realme-pineapple-devs/recovery_device_realme_pineapple.git device/realme/pineapple
 . build/envsetup.sh
 lunch twrp_pineapple-ap2a-eng
-make installclean
+make clean
 cp device/realme/pineapple/prebuilt/kernel out/target/product/pineapple/
 mka adbd recoveryimage
 ```
 
 ## To use it:
-
 ```
 fastboot flash recovery out/target/product/pineapple/recovery.img
 ```
