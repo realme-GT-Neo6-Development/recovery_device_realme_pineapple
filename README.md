@@ -41,8 +41,7 @@ More mods will be added later...
 git clone https://github.com/realme-pineapple-devs/recovery_device_realme_pineapple.git device/realme/pineapple
 . build/envsetup.sh
 lunch twrp_pineapple-ap2a-eng
-make clean
-cp device/realme/pineapple/prebuilt/kernel out/target/product/pineapple/
+make installclean
 mka adbd recoveryimage
 ```
 
