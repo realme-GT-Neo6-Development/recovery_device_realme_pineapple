@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2024 The Android Open Source Project
+# Copyright (C) 2025 The Android Open Source Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -25,7 +25,9 @@ TARGET_BOARD_PLATFORM := $(PRODUCT_PLATFORM)
 TARGET_BOOTLOADER_BOARD_NAME := $(TARGET_BOARD_PLATFORM)
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno735
 
-#BOARD_USES_QCOM_HARDWARE := true
+# Kernel
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
+PRODUCT_ENABLE_UFFD_GC := true
 
 # A/B related packagesc
 PRODUCT_PACKAGES += update_engine \
