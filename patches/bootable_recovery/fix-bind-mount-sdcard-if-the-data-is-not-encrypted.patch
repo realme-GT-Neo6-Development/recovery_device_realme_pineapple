@@ -1,0 +1,29 @@
+From d2947e6dedd75529a0f41720d1655663d6d44f6d
+From: MisterZtr <andey2004586@gmail.com>
+Date: Wed Jun 25 19:24:23 2025 +0300
+Subject: fix bind mount sdcard if the data is not encrypted
+
+diff --git a/partition.cpp b/partition.cpp
+index b9dfe4a8..c13b7a43 100644
+--- a/partition.cpp
++++ b/partition.cpp
+@@ -1767,7 +1767,7 @@ exit:
+ 	if (Removable)
+ 		Update_Size(Display_Error);
+ 
+-	if (!Symlink_Mount_Point.empty()/* && Symlink_Mount_Point != "/sdcard"*/) {
++	if (!Symlink_Mount_Point.empty()) {
+ 		if (!Bind_Mount(false))
+ 			return false;
+ 	}
+@@ -2238,6 +2238,10 @@ bool TWPartition::Wipe_Encryption() {
+ 	if (!base_partition->PreWipeEncryption())
+ 		goto exit;
+ 
++       // fix ERROR format data
++       if (!Symlink_Mount_Point.empty())
++               umount(Symlink_Mount_Point.c_str());
++
+ 	Find_Actual_Block_Device();
+ 	if (!Is_Present) {
+ 		LOGINFO("Block device not present, cannot format %s.\n", Display_Name.c_str());
