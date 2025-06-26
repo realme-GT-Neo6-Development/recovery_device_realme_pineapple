@@ -105,5 +105,39 @@ echo $variant
                 resetprop ro.product.odm.model "RMX3853"
                 resetprop ro.boot.hardware.revision "GL"
                 ;;
+             "23851")
+            # oneplus Ace5 
+                echo "OnePlus Ace5" > /config/usb_gadget/g1/strings/0x409/product
+                resetprop ro.product.device "OP5D2BL1"
+                resetprop ro.product.system.device "PKG110"
+                resetprop ro.product.vendor.device "OP5D2BL1"
+                resetprop ro.product.odm.device "OP5D2BL1"
+                resetprop ro.product.product.device "OP5D2BL1"
+                resetprop ro.product.system_ext.device "OP5D2BL1"
+                resetprop ro.product.product.model "PKG110"
+                resetprop ro.product.model "PKG110"
+                resetprop ro.product.system.model "PKG110"
+                resetprop ro.product.system_ext.model "PKG110"
+                resetprop ro.product.vendor.model "PKG110"
+                resetprop ro.product.odm.model "PKG110"
+                resetprop ro.boot.hardware.revision "CN"
+                ;;
+             "23867")
+            # oneplus 13R 
+                echo "OnePlus 13R" > /config/usb_gadget/g1/strings/0x409/product
+                resetprop ro.product.device "OP5D3BL1"
+                resetprop ro.product.system.device "CPH2691"
+                resetprop ro.product.vendor.device "OP5D3BL1"
+                resetprop ro.product.odm.device "OP5D3BL1"
+                resetprop ro.product.product.device "OP5D3BL1"
+                resetprop ro.product.system_ext.device "OP5D3BL1"
+                resetprop ro.product.product.model "CPH2691"
+                resetprop ro.product.model "CPH2691"
+                resetprop ro.product.system.model "CPH2691"
+                resetprop ro.product.system_ext.model "CPH2691"
+                resetprop ro.product.vendor.model "CPH2691"
+                resetprop ro.product.odm.model "CPH2691"
+                resetprop ro.boot.hardware.revision "IN"
+                ;;
 esac
 exit 0
