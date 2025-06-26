@@ -1,6 +1,6 @@
-#  OrangeFox recovery tree for relame devices with qualcomm processor codenamed pineapple
+OrangeFox recovery tree for older devices with Qualcomm processors codenamed pineapple and giulia
 
-Platforms, included under realme's codename "pineapple", are:
+Platforms, included under realme's codename "pineapple""giulia", are:
 - Qualcomm Snapdragon 8 Gen 3 (SM8650)
 - Qualcomm Snapdragon 8s Gen 3 (SM8635)
 - Qualcomm Snapdragon 7+ Gen 3 (SM7675)</br>
@@ -11,7 +11,9 @@ Devices, that can run and will run this recovery without any sudden and unforsee
 - realme GT6 Global (bale / RMX3851 / RE5CA6L1)
 - realme GT Neo 6SE (bale / RMX3850 / RE5C39L1)
 - realme GT6T (bale / RMX3853 / RE606FL1)
-- realme GT6 CN (divo / RMX3800 / RE5C4FL1)</br>
+- realme GT6 CN (divo / RMX3800 / RE5C4FL1)
+- oneplus Ace5 CN（/ PKG110 / OP5D2BL1）
+- oneplus 13R India（/ CPH2691 / OP5D3BL1）</br>
 
 ## Features
 
