@@ -8,8 +8,8 @@
 /vendor_dlkm    auto    vendor_dlkm                               flags=display="vendor_dlkm"
 
 # Metadata/Cache Properties
-/metadata       f2fs    /dev/block/by-name/metadata               flags=display="Metadata";backup=1;wrappedkey
-/cache          auto    /dev/block/by-name/oplusreserve2          flags=display="Cache";backup=1;wipeingui;wipeduringfactoryreset
+/metadata_image emmc    /dev/block/by-name/metadata               flags=display="Metadata Image";backup;flashimg
+/cache          auto    /dev/block/by-name/oplusreserve2          flags=display="Cache";backup;wipeingui;wipeduringfactoryreset
 
 # Other partitions
 /boot           emmc    /dev/block/by-name/boot                   flags=slotselect
