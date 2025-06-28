@@ -1,6 +1,6 @@
 #
 #	This file is part of the OrangeFox Recovery Project
-# 	Copyright (C) 2024 The OrangeFox Recovery Project
+# 	Copyright (C) 2025 The OrangeFox Recovery Project
 #
 #	OrangeFox is free software: you can redistribute it and/or modify
 #	it under the terms of the GNU General Public License as published by
@@ -33,9 +33,6 @@ OF_STATUS_INDENT_RIGHT=48
 
 # Recovery additional features
 OF_ENABLE_LPTOOLS=1
-
-OF_DISABLE_OTA_MENU := 1
-OF_DYNAMIC_FULL_SIZE := 9663676416
 
 # Maintainer specific settings
 OF_MAINTAINER := MisterZtr
