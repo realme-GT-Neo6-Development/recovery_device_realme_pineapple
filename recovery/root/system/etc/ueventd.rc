@@ -1,8 +1,20 @@
 import /vendor/etc/ueventd.rc
 import /odm/etc/ueventd.rc
+import /odm/etc/ueventd.reserve.rc
+# ifdef OPLUS_FEATURE_WIFI_BDF
+# fangbinghua@CONNECTIVITY.WIFI.HARDWARE.BDF, add for mtk wifi cfg loading
+import /odm/etc/ueventd.wifi.rc
+# endif /* OPLUS_FEATURE_WIFI_BDF */
+# ifndef OPLUS_FEATURE_WIFI_BDF
+# WuGuotian@CONNECTIVITY.WIFI.HARDWARE.BDF.1065227 , 2021/05/26,
+# Modify for: multi projects using different bdf, adding persist into firmware_directories
+# firmware_directories /etc/firmware/ /odm/firmware/ /vendor/firmware/ /firmware/image/
+# else /* OPLUS_FEATURE_WIFI_BDF */
+firmware_directories /etc/firmware/ /odm/firmware/ /data/vendor/firmware/update/ /vendor/firmware/ /firmware/image/ /vendor/firmware_mnt/image/qca6490/ /data/oplus/fw_update/ /mnt/vendor/persist/copy/ /mnt/vendor/persist/ /odm/etc/wifi/ /vendor/firmware_mnt/image/
+# endif /* OPLUS_FEATURE_WIFI_BDF */
 
-firmware_directories /etc/firmware/ /odm/firmware/ /vendor/firmware/ /firmware/image/
 uevent_socket_rcvbuf_size 16M
+parallel_restorecon enabled
 
 subsystem graphics
     devname uevent_devpath
@@ -23,6 +35,11 @@ subsystem sound
 subsystem dma_heap
    devname uevent_devpath
    dirname /dev/dma_heap
+
+subsystem vfio
+    devname uevent_devpath
+    dirname /dev/vfio
+
 # ueventd can only set permissions on device nodes and their associated
 # sysfs attributes, not on arbitrary paths.
 #
@@ -43,6 +60,7 @@ subsystem dma_heap
 /dev/binder               0666   root       root
 /dev/hwbinder             0666   root       root
 /dev/vndbinder            0666   root       root
+/dev/vfio/*               0666   root       root
 
 /dev/pmsg0                0222   root       log
 /dev/dma_heap/system      0444   system     system
@@ -51,14 +69,6 @@ subsystem dma_heap
 
 # kms driver for drm based gpu
 /dev/dri/*                0666   root       graphics
-
-#MIUI ADD: Audio_MIUIAudioFrame
-# mius iio devices
-/dev/iio:device*                                        0660   system     system
-/sys/bus/iio/devices/iio:device* buffer/enable                  0600 system system
-/sys/bus/iio/devices/iio:device* scan_elements/in_proximity_en  0600 system system
-/sys/bus/iio/devices/iio:device* scan_elements/in_timestamp_en  0600 system system
-#END Audio_MIUIAudioFrame
 
 # these should not be world writable
 /dev/uhid                 0660   uhid       uhid
@@ -73,12 +83,24 @@ subsystem dma_heap
 /dev/mtp_usb              0660   root       mtp
 /dev/usb_accessory        0660   root       usb
 /dev/tun                  0660   system     vpn
+/dev/hidraw*              0660   system     system
 
 # CDMA radio interface MUX
 /dev/ppp                  0660   radio      vpn
 
 /dev/kvm                  0666   root       root
 /dev/vhost-vsock          0666   root       root
+
+# ifdef OPLUS_FEATURE_PARAM
+/dev/block/by-name/param  0660   root       system
+/dev/block/by-name/ddr  0660   root       system
+/dev/block/bootdevice/by-name/ddr  0660   root       system
+# endif
+
+#ifdef OPLUS_FEATURE_STORAGE_TOOL
+#Xuweijie1@BSP.Storage , 20200601. add for Memory Monitor
+/dev/sg3         0600   system     system
+#endif /* OPLUS_FEATURE_STORAGE_TOOL */
 
 # sysfs properties
 /sys/devices/platform/trusty.*      trusty_version        0440  root   log
@@ -89,6 +111,3 @@ subsystem dma_heap
 /sys/devices/system/cpu/cpu*   cpufreq/scaling_min_freq   0664  system system
 /sys/devices/virtual/misc/uhid/*/leds/* brightness   0664  system system
 /sys/devices/virtual/misc/uhid/*/leds/* multi_intensity   0664  system system
-
-# added by xiaomi
-/dev/gsmtty*              0666 system     system
