@@ -59,13 +59,6 @@ service variant-script /system/bin/variant-script.sh
     disabled
     oneshot
     seclabel u:r:recovery:s0
-
-service overrideprops /system/bin/overrideprops.sh
-    user root
-    group root
-    disabled
-    oneshot
-    seclabel u:r:recovery:s0
     
 on init
     start vendor.boot-qti
@@ -73,7 +66,6 @@ on init
 on boot
     setprop sys.usb.config adb
     start variant-script
-    start overrideprops
 
 on post-fs-data
     mkdir /data/vendor/secure_element 0777 system system
