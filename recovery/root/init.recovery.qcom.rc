@@ -58,7 +58,7 @@ service overrideprops /system/bin/overrideprops.sh
     seclabel u:r:recovery:s0
     
 on init
-    start boot-hal-1-2
+    start vendor.boot-qti
 
 on boot
     setprop sys.usb.config adb
