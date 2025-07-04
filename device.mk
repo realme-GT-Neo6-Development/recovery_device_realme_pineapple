@@ -26,14 +26,6 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno735
 PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
 PRODUCT_ENABLE_UFFD_GC := true
 
-# A/B related packagesc
-PRODUCT_PACKAGES += update_engine \
-    update_engine_client \
-    update_verifier \
-    update_engine_sideload \
-    bootctrl.pineapple.recovery \
-    android.hardware.boot@1.2-impl-qti.recovery
-
 # SHIPPING API
 PRODUCT_SHIPPING_API_LEVEL := 31
 
