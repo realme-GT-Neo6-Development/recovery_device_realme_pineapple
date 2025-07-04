@@ -84,3 +84,6 @@ on property:twrp.modules.loaded=true
 
 on property:hwservicemanager.ready=true
     setprop sys.boot_completed 1
+
+on property:vendor.sys.listeners.registered=true
+    start vendor.ssgtzd
