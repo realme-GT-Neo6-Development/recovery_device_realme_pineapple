@@ -22,7 +22,7 @@ This file is copied from
    limitations under the License.
 -->
 
-<manifest version="7.0" type="device">
+<manifest version="1.0" type="device">
     <hal format="aidl">
         <name>android.hardware.security.keymint</name>
         <version>3</version>

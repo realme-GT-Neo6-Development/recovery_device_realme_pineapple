@@ -1,4 +1,4 @@
-<manifest version="7.0" type="device">
+<manifest version="1.0" type="device">
     <!-- secure element -->
     <hal format="aidl">
         <name>android.hardware.secure_element</name>
