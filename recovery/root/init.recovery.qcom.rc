@@ -27,6 +27,7 @@
 
 on early-init
     symlink /odm /vendor/odm
+    start vendor.gatekeeper_default
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
