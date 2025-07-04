@@ -45,6 +45,12 @@ on fs
     mount ext4 /dev/block/by-name/persist /persist rw
     mkdir /persist/OFRPFox
     install_keyring
+
+service post-boot-script /system/bin/sh -c /vendor/bin/init.kernel.post_boot.sh
+    user root
+    group root
+    oneshot
+    seclabel u:r:recovery:s0
     
 service variant-script /system/bin/variant-script.sh
     user root
