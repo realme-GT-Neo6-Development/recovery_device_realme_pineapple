@@ -2,8 +2,8 @@
 # All Rights Reserved.
 # Confidential and Proprietary - Qualcomm Technologies, Inc.
 
-#on init
-#    start vendor.keymint-qti
+on init
+    start vendor.keymint-qti
 
 service vendor.keymint-qti /vendor/bin/hw/android.hardware.security.keymint-service-qti
     class early_hal

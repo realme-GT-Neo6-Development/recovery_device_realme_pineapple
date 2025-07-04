@@ -80,14 +80,5 @@ on property:twrp.modules.loaded=true
     start realme.vibrator
     umount /firmware
 
-
 on property:hwservicemanager.ready=true
-    start vendor.qseecomd
-    start vendor.keymint-qti
     setprop sys.boot_completed 1
-
-on property:vendor.sys.listeners.registered=true && property:twrp.action_complete=0
-    start vendor.gatekeeper_default
-    start vendor.weaver_nxp
-    start vendor.secure_element
-    start vendor.keymint-strongbox
