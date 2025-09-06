@@ -1,9 +1,9 @@
+on init
+    start vendor.gatekeeper_default
+
 service vendor.gatekeeper_default /vendor/bin/hw/android.hardware.gatekeeper-service-qti
     class early_hal
     user root
     group root
-    disabled
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw:/system/lib64:/sbin:/odm/lib64
     seclabel u:r:recovery:s0
-
-on property:vendor.gatekeeper.is_security_level_spu=0
-    enable vendor.gatekeeper_default

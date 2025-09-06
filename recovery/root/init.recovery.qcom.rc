@@ -25,9 +25,13 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-on early-init
-    symlink /odm /vendor/odm
-    start vendor.gatekeeper_default
+on init
+    start vendor.boot-qti
+    setprop prepdecrypt.setpatch true
+
+on early-fs
+    write /proc/sys/walt/sched_lib_name "recovery,magiskboot,Updater,updater,update_engine_sideload"
+    write /proc/sys/walt/sched_lib_mask_force 255
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
@@ -38,49 +42,50 @@ on fs
     chmod 0664 /dev/ion
     chown system system /dev/ion
     mkdir /mnt/vendor 0775 shell system
-    mkdir /mnt/vendor/persist 0771 system system
+    mkdir /mnt/vendor/persist 0775 shell system
     chown system system /mnt/vendor/persist
     chmod 0771 /mnt/vendor/persist
     restorecon /mnt/vendor/persist
     mount ext4 /dev/block/by-name/persist /mnt/vendor/persist rw
     mount ext4 /dev/block/by-name/persist /persist rw
-    mkdir /persist/OFRPFox
     install_keyring
+
 
 service post-boot-script /system/bin/sh -c /vendor/bin/init.kernel.post_boot.sh
     user root
     group root
     oneshot
     seclabel u:r:recovery:s0
-    
+
 service variant-script /system/bin/variant-script.sh
     user root
     group root
     disabled
     oneshot
     seclabel u:r:recovery:s0
-    
-on init
-    start vendor.boot-qti
 
 on boot
     setprop sys.usb.config adb
     start variant-script
-
-on post-fs-data
-    mkdir /data/vendor/secure_element 0777 system system
 
 on property:twrp.modules.loaded=true
     # Mount firmware
     mkdir /firmware
     mount vfat /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /firmware ro
     # Load ADSP firmware for PMIC
-    wait /sys/kernel/boot_adsp/boot
-    write /sys/kernel/boot_adsp/boot 1
+    wait /sys/kernel/boot_adsp/ssr
+    write /sys/kernel/boot_adsp/ssr 1
     wait /sys/class/power_supply/battery
     start vendor.health-default
     start realme.vibrator
     umount /firmware
 
-on property:hwservicemanager.ready=true
+on property:ro.crypto.state=encrypted && property:ro.boot.dynamic_partitions=true
+    start prepdecrypt.vendor
+
+on property:servicemanager.ready=true
     setprop sys.boot_completed 1
+
+on property:vendor.sys.listeners.registered=true
+    start vendor.ssgtzd
+    start vendor.se_omapi

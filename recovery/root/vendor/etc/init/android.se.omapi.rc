@@ -1,10 +1,6 @@
-on init
-    start vendor.se_omapi
-    
 service vendor.se_omapi /vendor/bin/hw/android.se.omapi.fake
     class hal
     user root
     group root
     interface aidl android.se.omapi.ISecureElementService/default
-    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw:/system/lib64:/sbin:/odm/lib64
     seclabel u:r:recovery:s0
