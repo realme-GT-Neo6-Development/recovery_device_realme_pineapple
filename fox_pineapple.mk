@@ -33,6 +33,7 @@ OF_STATUS_INDENT_RIGHT=48
 
 # Recovery additional features
 OF_ENABLE_LPTOOLS=1
+OF_USE_DMCTL=1
 
 # Maintainer specific settings
 OF_MAINTAINER := MisterZtr
