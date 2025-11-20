@@ -87,5 +87,11 @@ on property:servicemanager.ready=true
     setprop sys.boot_completed 1
 
 on property:vendor.sys.listeners.registered=true
+    umount /firmware
+    umount /vendor
+    mount vfat /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /vendor/firmware_mnt ro
+    start vendor.secure_element
+    start vendor.weaver_nxp
     start vendor.ssgtzd
-    start vendor.se_omapi
+    stop se_omapi
+    start se_omapi
