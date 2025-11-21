@@ -13,6 +13,9 @@ Devices, that can run and will run this recovery without any sudden and unforsee
 - realme GT6T (bale / RMX3853 / RE606FL1)
 - realme GT6 CN (divo / RMX3800 / RE5C4FL1)</br>
 
+Currently:
+- realme GT6 CN (divo / RMX3800 / RE5C4FL1) cannot decrypt
+
 ## Features
 
 Works:
@@ -27,8 +30,8 @@ Works:
 - [X] Flashlight
 - [X] Vibrator/Haptic
 - [X] OTA/Payload
-- [ ] User data decryption on RUI(We can only decrypt “/data”)
-- [ ] Сannot format DATA on RUI, until user data is decrypted
+- [X] User data decryption on RUI(We can only decrypt “/data”)
+- [X] Сannot format DATA on RUI, until user data is decrypted
 
 # Building
 
