@@ -1,4 +1,7 @@
-service vendor.se_omapi /vendor/bin/hw/android.se.omapi.fake
+on init
+    start vendor.se_omapi
+
+service vendor.se_omapi /vendor/bin/se_omapi
     class hal
     user root
     group root

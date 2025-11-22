@@ -10,8 +10,10 @@ Devices, that can run and will run this recovery without any sudden and unforsee
 - realme GT Neo6 (bale / RMX3852 / RE5C46L1)
 - realme GT6 Global (bale / RMX3851 / RE5CA6L1)
 - realme GT Neo 6SE (bale / RMX3850 / RE5C39L1)
-- realme GT6T (bale / RMX3853 / RE606FL1)
-- realme GT6 CN (divo / RMX3800 / RE5C4FL1)</br>
+- realme GT6T (bale / RMX3853 / RE606FL1)</br>
+
+Devices with issues:
+- realme GT6 CN (divo / RMX3800 / RE5C4FL1) cannot decrypt userdata</br>
 
 ## Features
 
@@ -27,8 +29,7 @@ Works:
 - [X] Flashlight
 - [X] Vibrator/Haptic
 - [X] OTA/Payload
-- [ ] User data decryption on RUI(We can only decrypt “/data”)
-- [ ] Сannot format DATA on RUI, until user data is decrypted
+- [X] User data decryption
 
 # Building
 
