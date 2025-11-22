@@ -1,6 +1,3 @@
-on init
-    start vendor.weaver_nxp
-
 service vendor.weaver_nxp /vendor/bin/hw/android.hardware.weaver-service.nxp
     class hal
     user root

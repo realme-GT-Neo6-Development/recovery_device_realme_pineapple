@@ -89,8 +89,5 @@ on property:servicemanager.ready=true
 on property:vendor.sys.listeners.registered=true
     umount /vendor
     symlink /firmware /vendor/firmware_mnt
-    start vendor.secure_element
-    start vendor.weaver_nxp
     start vendor.ssgtzd
-    stop se_omapi
     start se_omapi

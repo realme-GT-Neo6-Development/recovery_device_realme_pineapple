@@ -1,6 +1,3 @@
-on init
-    start vendor.se_omapi
-
 service vendor.se_omapi /vendor/bin/se_omapi
     class hal
     user root
