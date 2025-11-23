@@ -32,7 +32,7 @@ OF_STATUS_INDENT_LEFT=48
 OF_STATUS_INDENT_RIGHT=48
 
 # Recovery additional features
-OF_ENABLE_LPTOOLS=1
+OF_ENABLE_ALL_PARTITION_TOOLS=1
 OF_USE_DMCTL=1
 
 # Maintainer specific settings
