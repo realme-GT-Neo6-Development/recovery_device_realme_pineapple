@@ -45,4 +45,5 @@
 /oplusdycnvbk   emmc    /dev/block/by-name/oplusdycnvbk           flags=slotselect;backup;display="oplusdycnvbk"
 
 # Removable storage
+/storage        auto    /data/media/0                             flags=display="Internal Storage";backup=1;usermrf;fsflags="bind,utf8";removable
 /usb_otg        auto    /dev/block/sdg1 /dev/block/sdh1           flags=storage;wipeingui;removable;fsflags="utf8"
